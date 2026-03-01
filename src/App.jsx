@@ -6,6 +6,7 @@ import TrackDetail from './TrackDetail';
 import LaptimesPage from './LaptimesPage'; // TENTO ŘÁDEK CHYBĚL
 import Footer from './Footer';
 import './App.css';
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   return (

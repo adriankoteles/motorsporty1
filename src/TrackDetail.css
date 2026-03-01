@@ -530,7 +530,42 @@
   }
 
   .v-lb-line {
-    padding: 12px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 4px;
+    position: relative;
+  }
+
+  .v-lb-line .idx {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 1.5rem;
+    opacity: 0.2;
+    text-align: right;
+  }
+
+  .v-lb-line .name {
+    font-size: 0.95rem;
+    width: calc(100% - 30px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 2px;
+  }
+
+  .v-lb-line .date {
+    font-size: 0.65rem !important;
+    margin-right: 0 !important;
+    margin-bottom: 4px;
+    color: #777 !important;
+  }
+
+  .v-lb-line .time {
+    font-size: 1.3rem;
+    color: #d9ff00;
   }
 
   .v-lb-btn {

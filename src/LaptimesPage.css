@@ -555,10 +555,10 @@
 
   .v-trow {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     position: relative;
-    padding: 20px;
-    gap: 4px;
+    padding: 12px 16px;
+    gap: 2px;
     background: #191919;
     border: 1px solid #444;
     border-radius: 8px;
@@ -566,58 +566,67 @@
   }
 
   .v-trow>span {
-    flex: 1 1 100%;
+    flex: none;
+    width: 100%;
   }
 
   .v-trow .v-gold:first-child {
     /* Rank */
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 12px;
+    right: 16px;
     font-size: 2rem;
     opacity: 0.1;
     line-height: 1;
+    text-align: right;
+    width: auto;
   }
 
   .v-trow .v-bold {
     /* Name */
-    width: calc(100% - 40px);
-    font-size: 1.2rem;
+    width: calc(100% - 45px);
+    font-size: 0.95rem;
     color: #d9ff00;
     margin-bottom: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
   }
 
   .v-trow .v-dim {
     /* Track / Variant */
-    width: 60%;
-    font-size: 0.75rem;
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #1a1a1a;
+    font-size: 0.7rem;
+    color: #aaa;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    border-bottom: none;
+    line-height: 1.3;
   }
 
   .v-trow .date-col {
     /* Date */
-    width: 35%;
-    font-size: 0.75rem;
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #1a1a1a;
-    text-align: right;
+    font-size: 0.65rem;
+    color: #777;
+    margin-bottom: 6px;
+    padding-bottom: 0px;
+    border-bottom: none;
+    text-align: left;
   }
 
   .v-trow .v-mono {
     /* Time */
     text-align: left;
     color: #fff;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    margin-top: 2px;
   }
 
   .v-center {
     /* Eye icon */
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 12px;
+    right: 16px;
     width: auto !important;
     justify-content: flex-end;
   }

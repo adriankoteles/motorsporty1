@@ -30,7 +30,7 @@
   background: linear-gradient(to top, #111111 2%, transparent 100%);
   display: flex;
   align-items: flex-end;
-  padding-bottom: 50px;
+  padding-bottom: 48px;
 }
 
 .back-link-1-1 {
@@ -49,13 +49,13 @@
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 900;
   text-transform: uppercase;
-  margin: 0 0 15px 0;
+  margin: 0 0 16px 0;
   line-height: 1;
 }
 
 .v-hero-tags {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 .v-tag {
@@ -65,7 +65,7 @@
   padding: 6px 14px;
   font-size: 0.7rem;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 0;
   text-transform: uppercase;
 }
 
@@ -94,7 +94,7 @@
 .v-karts-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 32px;
 }
 
 .v-karts-grid.single-kart {
@@ -103,7 +103,7 @@
 }
 
 .v-kart-card {
-  background: #1a1a1a;
+  background: #191919;
   border: 1px solid #444;
   border-radius: 12px;
   overflow: hidden;
@@ -114,7 +114,7 @@
 .kart-image-wrapper {
   background: #222;
   /* Tmavší pozadí pro fotku */
-  border-bottom: 2px solid #d9ff00;
+  border-bottom: 1px solid #444;
   /* Neonová čára pod fotkou */
   width: 100%;
   display: flex;
@@ -134,7 +134,7 @@
 }
 
 .kart-content {
-  padding: 30px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -152,7 +152,7 @@
   color: #ccc;
   font-size: 0.85rem;
   line-height: 1.5;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
   font-style: italic;
 }
 
@@ -234,8 +234,8 @@
 /* VARIANTY (TABS) */
 .v-tabs {
   display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 16px;
+  margin-bottom: 32px;
 }
 
 .v-tabs button {
@@ -258,7 +258,7 @@
 }
 
 .v-var-box {
-  background: transparent;
+  background: #191919;
   border: 1px solid #444;
   border-radius: 12px;
   padding: 40px;
@@ -274,7 +274,7 @@
   color: #d9ff00;
   font-weight: 900;
   font-size: 2rem;
-  margin: 0 0 15px;
+  margin: 0 0 16px;
   text-transform: uppercase;
 }
 
@@ -282,14 +282,14 @@
   color: #ccc;
   font-size: 0.85rem;
   line-height: 1.5;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
   font-style: italic;
 }
 
 .v-var-stats {
   display: flex;
-  gap: 30px;
-  margin-bottom: 25px;
+  gap: 32px;
+  margin-bottom: 24px;
 }
 
 .v-var-stat {
@@ -368,8 +368,6 @@
   max-width: 100%;
   max-height: 250px;
   object-fit: contain;
-  /* Glowing effect for the track map like in wireframe if neon */
-  filter: drop-shadow(0 0 8px rgba(217, 255, 0, 0.4));
 }
 
 .v-map-placeholder {
@@ -389,11 +387,11 @@
 .v-lb-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 32px;
 }
 
 .v-lb-card {
-  background: transparent;
+  background: #191919;
   border: 1px solid #444;
   border-radius: 12px;
   overflow: hidden;
@@ -402,9 +400,9 @@
 }
 
 .v-lb-header {
-  background-color: #1a1a1a;
+  background-color: #222;
   border-bottom: 1px solid #444;
-  padding: 20px 25px;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -437,12 +435,16 @@
 .v-lb-line {
   display: flex;
   align-items: center;
-  padding: 15px 25px;
+  padding: 16px 24px;
   border-bottom: 1px solid #333;
   font-weight: 800;
   font-size: 0.9rem;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.02);
+  background: transparent;
+}
+
+.v-lb-line:hover {
+  background: #252525;
 }
 
 .v-lb-line:last-child {
@@ -471,17 +473,18 @@
   background: transparent;
   border: none;
   border-top: 1px solid #444;
-  color: #d9ff00;
+  color: #888;
   padding: 20px;
   font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
   font-size: 0.85rem;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .v-lb-btn:hover {
-  background: rgba(217, 255, 0, 0.1);
+  background: #222;
+  color: #fff;
 }
 
 /* RESPONZIVITA */
@@ -498,4 +501,80 @@
   .v-var-map {
     width: 100%;
   }
+}
+
+@media (max-width: 768px) {
+  .v-hero {
+    height: 45vh;
+  }
+
+  .v-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .v-section {
+    margin-top: 48px;
+  }
+
+  .v-var-box {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .kart-content {
+    padding: 24px;
+  }
+
+  .v-lb-header {
+    padding: 16px 20px;
+  }
+
+  .v-lb-line {
+    padding: 12px 20px;
+  }
+
+  .v-lb-btn {
+    padding: 16px;
+  }
+
+  .v-tabs {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .v-tabs button {
+    flex: 1 1 calc(50% - 12px);
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+.v-ig-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white !important;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-left: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(220, 39, 67, 0.2);
+}
+
+.v-ig-badge svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+
+.v-ig-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.4);
 }

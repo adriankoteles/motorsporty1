@@ -1,34 +1,40 @@
 /* src/Header.css */
 
 .main-nav {
-  background-color: #d9ff00; /* Victory Neon žlutá */
+  background-color: #d9ff00;
+  /* Victory Neon žlutá */
   width: 100%;
-  padding: 18px 0;
+  padding: 16px 0;
   position: sticky;
   top: 0;
-  z-index: 10000; /* Musí být nad mapou i nad obsahem */
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  z-index: 10000;
+  /* Musí být nad mapou i nad obsahem */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
   display: flex;
   justify-content: center;
-  gap: 45px; /* Rozestupy mezi položkami podle Figmy */
+  gap: 48px;
+  /* Rozestupy mezi položkami podle 4px pravidla */
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 .nav-container a {
   color: black;
   text-decoration: none;
-  font-weight: 900; /* Extra tučné Montserrat */
+  font-weight: 900;
+  /* Extra tučné Montserrat */
   text-transform: uppercase;
   font-size: 0.85rem;
-  letter-spacing: 1.8px; /* Širší spacing pro prémiový look */
+  letter-spacing: 1.8px;
+  /* Širší spacing pro prémiový look */
   padding: 8px 0;
   transition: all 0.2s ease-in-out;
-  border-bottom: 3px solid transparent; /* Příprava pro podtržení */
+  border-bottom: 3px solid transparent;
+  /* Příprava pro podtržení */
 }
 
 /* STAV PŘI HOVERU - Jemné ztmavení pro feedback */
@@ -38,7 +44,8 @@
 
 /* AKTIVNÍ STAV - Tohle řeší to podtržení */
 .nav-container a.active {
-  border-bottom: 3px solid black; /* Černé podtržení aktivní stránky */
+  border-bottom: 3px solid black;
+  /* Černé podtržení aktivní stránky */
   opacity: 1;
 }
 
@@ -46,9 +53,15 @@
 @media (max-width: 768px) {
   .nav-container {
     gap: 20px;
+    padding: 0 16px;
+    flex-wrap: wrap;
+    /* Pro případ hodně položek */
   }
+
   .nav-container a {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 1px;
+    padding: 8px;
+    /* Zvětšení dotykové plochy na mobilu */
   }
 }

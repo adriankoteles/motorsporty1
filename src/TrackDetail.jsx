@@ -19,10 +19,21 @@ function LeaderboardTable({ trackId, variant }) {
         .select('*')
         .eq('track_id', trackId)
         .eq('variant_name', variant.id)
-        .order('lap_time', { ascending: true })
-        .limit(5);
+        .order('lap_time', { ascending: true });
 
-      if (!error) setLaps(data || []);
+      if (!error && data) {
+        const uniqueLaps = [];
+        const seen = new Set();
+        for (const lap of data) {
+          const key = lap.nick_name.toLowerCase();
+          if (!seen.has(key)) {
+            seen.add(key);
+            uniqueLaps.push(lap);
+            if (uniqueLaps.length === 5) break;
+          }
+        }
+        setLaps(uniqueLaps);
+      }
       setLoading(false);
     };
     fetchLaps();
@@ -43,8 +54,29 @@ function LeaderboardTable({ trackId, variant }) {
           laps.map((lap, i) => (
             <div key={lap.id} className="v-lb-line">
               <span className="idx">{i + 1}.</span>
-              <span className="name">{lap.nick_name}</span>
-              <span className="time">{lap.lap_time.toFixed(4)}</span>
+              <span className="name">
+                {lap.real_name ? `${lap.real_name} (${lap.nick_name})` : lap.nick_name}
+                {lap.gender === 'muz' && <span style={{ color: '#00bfff', marginLeft: '6px' }}>♂</span>}
+                {lap.gender === 'zena' && <span style={{ color: '#ff69b4', marginLeft: '6px' }}>♀</span>}
+                {lap.instagram && (
+                  <a
+                    href={`https://instagram.com/${lap.instagram.replace('@', '')}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="v-ig-badge"
+                    title={`Instagram: ${lap.instagram}`}
+                  >
+                    <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                    </svg>
+                    IG
+                  </a>
+                )}
+              </span>
+              <span className="date" style={{ color: '#888', fontSize: '0.75rem', marginRight: '16px' }}>
+                {new Date(lap.created_at || Date.now()).toLocaleDateString('cs-CZ')}
+              </span>
+              <span className="time">{lap.lap_time.toFixed(4)}s</span>
             </div>
           ))
         ) : (
@@ -82,11 +114,6 @@ function TrackDetail() {
           <div className="victory-container">
             <Link to="/" className="back-link-1-1">← ZPĚT NA SEZNAM</Link>
             <h1 className="v-hero-title">{track.name}</h1>
-            <div className="v-hero-tags">
-              <span className="v-tag">Nightracing</span>
-              <span className="v-tag">Elektrické</span>
-              <span className="v-tag">Indoor</span>
-            </div>
           </div>
         </div>
       </header>
@@ -238,20 +265,7 @@ function TrackDetail() {
           </div>
         </section>
 
-        {/* DALŠÍ INFORMACE */}
-        <section className="v-section" style={{ marginBottom: '50px' }}>
-          <h2 className="v-label">DALŠÍ INFORMACE</h2>
-          <div className="v-info-list" style={{ color: '#ccc', lineHeight: '1.6', fontSize: '0.95rem' }}>
-            <ul style={{ listStyle: 'none', padding: '0', margin: '0' }}>
-              <li style={{ marginBottom: '8px' }}><strong style={{ color: 'white' }}>Hlavní rovinka:</strong> Přes 100 metrů prostoru pro maximální akceleraci.</li>
-              <li style={{ marginBottom: '8px' }}><strong style={{ color: 'white' }}>Povrch:</strong> Asfaltový povrch položený na úplné rovině bez převýšení</li>
-              <li style={{ marginBottom: '8px' }}><strong style={{ color: 'white' }}>Noční závodění</strong></li>
-              <li style={{ marginBottom: '8px' }}><strong style={{ color: 'white' }}>Vybavení:</strong> Zapůjčení profesionální přilby je <strong style={{ color: 'white' }}>ZDARMA</strong>. Z hygienických důvodů je povinná kukla (lze zakoupit na místě).</li>
-              <li style={{ marginBottom: '8px' }}><strong style={{ color: 'white' }}>Rodinné vyžití:</strong> Kompletní program pro budoucí šampiony - dětské motokáry, čtyřkolky, mašinky a doplňková adventure dráha.</li>
-              <li style={{ marginBottom: '8px' }}><strong style={{ color: 'white' }}>Motobar:</strong> Široký výběr nápojů a teplé občerstvení (pizza, čerstvé bagety, párek v rohlíku) přímo v areálu.</li>
-            </ul>
-          </div>
-        </section>
+
 
       </div >
     </div >

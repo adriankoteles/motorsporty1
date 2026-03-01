@@ -20,7 +20,7 @@
   align-items: center;
   margin-bottom: 40px;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 24px;
 }
 
 .laptimes-title-wrap {
@@ -43,7 +43,7 @@
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 .v-add-btn {
@@ -53,14 +53,14 @@
   font-weight: 900;
   padding: 16px 40px;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1rem;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .v-add-btn:hover {
@@ -71,18 +71,18 @@
 .v-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  background: #111;
-  padding: 25px 35px;
+  gap: 24px;
+  background: #191919;
+  padding: 24px 32px;
   border-radius: 12px;
   margin-bottom: 40px;
-  border: 1px solid #222;
+  border: 1px solid #444;
 }
 
 .v-filter-item {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   flex: 1;
   min-width: 200px;
 }
@@ -97,11 +97,11 @@
 
 .v-filter-item select,
 .v-search-input {
-  background: #0a0a0a;
-  border: 1px solid #333;
+  background: #191919;
+  border: 1px solid #444;
   color: white;
-  padding: 14px 18px;
-  border-radius: 6px;
+  padding: 12px 16px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.2s;
@@ -128,37 +128,37 @@
 
 /* TABULKA */
 .v-table-card {
-  background: #111;
-  border: 1px solid #222;
+  background: #191919;
+  border: 1px solid #444;
   border-radius: 12px;
   overflow: hidden;
 }
 
 .v-thead {
-  background: #151515;
+  background: #191919;
   color: #888;
   display: grid;
-  grid-template-columns: 80px 2fr 2fr 150px 100px;
+  grid-template-columns: 80px 5fr 4fr 120px 150px 80px;
   padding: 20px 40px;
   font-weight: 800;
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #444;
 }
 
 .v-trow {
   display: grid;
-  grid-template-columns: 80px 2fr 2fr 150px 100px;
+  grid-template-columns: 80px 5fr 4fr 120px 150px 80px;
   padding: 24px 40px;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid #333;
   align-items: center;
   transition: all 0.2s ease;
   background: transparent;
 }
 
 .v-trow:hover {
-  background: #161616;
+  background: #222;
 }
 
 .v-bold {
@@ -202,7 +202,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 4px;
   transition: all 0.2s;
   font-size: 1.1rem;
 }
@@ -210,6 +210,35 @@
 .v-eye:hover {
   border-color: #d9ff00;
   color: #d9ff00;
+}
+
+.v-ig-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white !important;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-left: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(220, 39, 67, 0.2);
+}
+
+.v-ig-badge svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+
+.v-ig-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.4);
 }
 
 .v-empty-row {
@@ -231,9 +260,9 @@
 }
 
 .v-modal-box {
-  background: #111;
-  border: 1px solid #333;
-  padding: 50px 40px;
+  background: #191919;
+  border: 1px solid #444;
+  padding: 48px 40px;
   width: 90%;
   max-width: 500px;
   border-radius: 12px;
@@ -256,10 +285,20 @@
   gap: 20px;
 }
 
+.v-form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.v-form-row>* {
+  flex: 1;
+  min-width: 0;
+}
+
 .v-form input,
 .v-form select {
-  background: #0a0a0a;
-  border: 1px solid #333;
+  background: #191919;
+  border: 1px solid #444;
   padding: 16px 20px;
   color: white;
   font-weight: 600;
@@ -299,18 +338,18 @@
 .v-form input[type="file"] {
   padding: 12px;
   border: 1px dashed #444;
-  background: #0a0a0a;
+  background: #191919;
   cursor: pointer;
 }
 
 .v-form input[type="file"]::file-selector-button {
-  background: #222;
+  background: #2a2a2a;
   color: white;
-  border: 1px solid #333;
+  border: 1px solid #444;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
-  margin-right: 15px;
+  margin-right: 16px;
   font-weight: 700;
   transition: 0.2s;
 }
@@ -319,6 +358,44 @@
   background: #333;
   border-color: #d9ff00;
   color: #d9ff00;
+}
+
+.v-consent {
+  margin-top: 4px;
+  padding: 16px;
+  background: #111;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.v-consent label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #ccc;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.v-consent input[type="checkbox"] {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: #d9ff00;
+  cursor: pointer;
+}
+
+.inline-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #d9ff00;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
 }
 
 .v-submit {
@@ -330,7 +407,7 @@
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 1.1rem;
   letter-spacing: 1px;
   transition: all 0.2s;
@@ -348,8 +425,8 @@
 
 .v-close {
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 24px;
+  right: 24px;
   background: transparent;
   border: none;
   color: #888;
@@ -373,7 +450,7 @@
   border-radius: 8px;
   font-weight: 800;
   font-size: 0.85rem;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
   text-transform: uppercase;
   border-left: 4px solid;
 }
@@ -404,7 +481,7 @@
 .v-preview-img {
   max-width: 90%;
   max-height: 85vh;
-  border: 1px solid #333;
+  border: 1px solid #444;
   border-radius: 8px;
 }
 
@@ -422,7 +499,7 @@
 
   .v-thead,
   .v-trow {
-    grid-template-columns: 50px 1.5fr 1fr 100px 70px;
+    grid-template-columns: 50px 3fr 2fr 80px 100px 60px;
     padding: 20px;
     gap: 10px;
   }
@@ -436,7 +513,7 @@
   .laptimes-header {
     flex-direction: column;
     align-items: stretch;
-    gap: 15px;
+    gap: 16px;
   }
 
   .v-title {
@@ -451,13 +528,13 @@
   .v-add-btn {
     width: 100%;
     justify-content: center;
-    padding: 18px;
+    padding: 16px;
   }
 
   .v-filters {
     flex-direction: column;
     padding: 20px;
-    gap: 15px;
+    gap: 16px;
   }
 
   .v-table-card {
@@ -473,7 +550,7 @@
   .v-tbody {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
   }
 
   .v-trow {
@@ -481,9 +558,9 @@
     flex-wrap: wrap;
     position: relative;
     padding: 20px;
-    gap: 5px;
-    background: #111;
-    border: 1px solid #222;
+    gap: 4px;
+    background: #191919;
+    border: 1px solid #444;
     border-radius: 8px;
     align-items: flex-start;
   }
@@ -512,11 +589,21 @@
 
   .v-trow .v-dim {
     /* Track / Variant */
-    width: 100%;
+    width: 60%;
     font-size: 0.75rem;
     margin-bottom: 12px;
     padding-bottom: 12px;
     border-bottom: 1px solid #1a1a1a;
+  }
+
+  .v-trow .date-col {
+    /* Date */
+    width: 35%;
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #1a1a1a;
+    text-align: right;
   }
 
   .v-trow .v-mono {
@@ -537,16 +624,22 @@
 
   .v-trow:hover {
     padding-left: 20px;
-    background: #161616;
+    background: #222;
   }
 
   .v-modal-box {
-    padding: 35px 20px;
+    padding: 32px 20px;
     width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .v-form-row {
+    flex-direction: column;
   }
 
   .v-neon {
     font-size: 1.6rem;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
   }
 }

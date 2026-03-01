@@ -1,0 +1,77 @@
+.p-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20000;
+    padding: 24px;
+}
+
+.p-modal-box {
+    background: #191919;
+    border: 1px solid #444;
+    padding: 48px;
+    width: 100%;
+    max-width: 700px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    position: relative;
+    color: white;
+}
+
+.p-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: none;
+    color: #888;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.p-close:hover {
+    color: #d9ff00;
+}
+
+.p-modal-box h2 {
+    color: #d9ff00;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+}
+
+.p-content h3 {
+    color: #fff;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.p-content p,
+.p-content ul,
+.p-content li {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.p-content strong {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .p-modal-box {
+        padding: 32px 24px;
+    }
+}

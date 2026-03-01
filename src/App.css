@@ -3,9 +3,11 @@
 
 #root {
   width: 100%;
+  max-width: 100vw;
   margin: 0;
   padding: 0;
   display: block;
+  overflow-x: hidden;
 }
 
 body {
@@ -13,19 +15,27 @@ body {
   padding: 0;
   background-color: #0a0a0a;
   color: white;
-  font-family: 'Montserrat', sans-serif; /* Montserrat je pro Victory Circle ideální */
+  font-family: 'Montserrat', sans-serif;
+  /* Montserrat je pro Victory Circle ideální */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100vw;
+  max-width: 100%;
 }
 
 .victory-page {
   width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .victory-container {
   width: 100%;
-  max-width: 1400px; /* Šířka obsahu podle návrhu */
+  max-width: 1400px;
+  /* Šířka obsahu podle návrhu */
   margin: 0 auto;
   padding: 0 20px;
 }

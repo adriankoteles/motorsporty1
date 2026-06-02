@@ -1,4 +1,3 @@
-
 /* src/constants/tracks.js */
 export const ALL_TRACKS = [
   {
@@ -34,11 +33,11 @@ export const ALL_TRACKS = [
     variants: [
       {
         id: "HLAVNÍ OKRUH",
-        desc: "The mplete track configuration utilizing every section. Features high-speed straights, technical chicanes, and elevation changes. Ideal for competitive races and championship events.",
+        desc: "Kompletní konfigurace trati využívající všechny sekce. Nabízí rychlé rovinky, technické šikany a změny převýšení. Ideální pro soutěžní závody a šampionáty.",
         length: "520m",
         turns: 12,
         map: "trat_1_map_hlavni_okruh.png",
-        features: []
+        features: ["Hlazený beton"]
       },
     ]
   },
@@ -49,7 +48,7 @@ export const ALL_TRACKS = [
     coords: [49.82522589411177, 18.216954740621414],
     img: 'bg_motopark.webp',
     coverImg: 'trat_2_cover.webp',
-    description: "Motopark Ostrava je multifunkční motoristický areál nacházející se v Ostravě-Třebovice... Jedná se o venkovní (outdoor) okruh s asfaltovým povrchem, který je primárně využíván pro pronájem motokár, jízdy veřejnosti na vlastních strojích (minibike, motocykly) a kurzy bezpečné jízdy.",
+    description: "Motopark Ostrava je multifunkční motoristický areál nacházející se v Ostravě-Třebovice. Jedná se o venkovní (outdoor) okruh s asfaltovým povrchem, který je primárně využíván pro pronájem motokár, jízdy veřejnosti na vlastních strojích (minibike, motocykly) a kurzy bezpečné jízdy.",
     karts: [
       {
         model: "SODI RT8",
@@ -63,19 +62,19 @@ export const ALL_TRACKS = [
       },
       {
         model: "SODI RT8 - pro 2 osoby",
-        desc: "Verze RT8 upravená pro dva jezdce přináší výkon a dravost legendárního modelu RT8 do světa tandemových jízd. Je to ideální volba, pokud chceš někomu ukázat skutečnou rychlost na limitu nebo sdílet radost z jízdy. I přes svou velikost si zachovává skvělou ovladatelnost a dravý nástup výkonu",
+        desc: "Verze RT8 upravená pro dva jezdce přináší výkon a dravost legendárního modelu RT8 do světa tandemových jízd. Je to ideální volba, pokud chceš někomu ukázat skutečnou rychlost na limitu nebo sdílet radost z jízdy. I přes svou velikost si zachovává skvělou ovladatelnost a dravý nástup výkonu.",
         power: "8.4 HP",
         speed: "60 km/h",
         weight: "171 kg",
         engine: "Honda GX270",
-        img: "trat_2_kart_sodi_rt8.webp",
+        img: "trat_2_kart_sodi_rt8_tandem.webp",
         features: ["Adjustable pedals"]
       }
     ],
     variants: [
       {
         id: "SHORT",
-        desc: "The mplete track configuration utilizing every section. Features high-speed straights, technical chicanes, and elevation changes. Ideal for competitive races and championship events.",
+        desc: "Kratší, rychlá konfigurace trati zaměřená na plynulost a správné časování brzdění. Skvělá pro rychlé sprinty.",
         length: "510m",
         turns: 7,
         map: "trat_2_map_short.png",
@@ -83,7 +82,7 @@ export const ALL_TRACKS = [
       },
       {
         id: "LONG",
-        desc: "The mplete track configuration utilizing every section. Features high-speed straights, technical chicanes, and elevation changes. Ideal for competitive races and championship events.",
+        desc: "Plná délka trati kombinující technické pasáže v zadní části s dlouhou cílovou rovinkou. Prověří tvoji fyzickou kondici.",
         length: "620m",
         turns: 9,
         map: "trat_2_map_long.png",
@@ -92,7 +91,7 @@ export const ALL_TRACKS = [
     ]
   },
   {
-    id: 4,
+    id: 3, // Opraveno z 4 na 3 pro zachování sekvence
     name: "STEEL RING",
     city: "TŘINEC",
     coords: [49.691454618987045, 18.66848821476503],
@@ -107,27 +106,137 @@ export const ALL_TRACKS = [
         speed: "60 km/h",
         weight: "155 kg",
         engine: "Honda GX270",
-        img: "trat_2_kart_sodi_rt8.webp",
+        img: "trat_4_kart_crg_centurion.webp",
         features: ["Adjustable pedals"]
       },
     ],
     variants: [
       {
         id: "Fast",
-        desc: "The mplete track configuration utilizing every section. Features high-speed straights, technical chicanes, and elevation changes. Ideal for competitive races and championship events.",
+        desc: "Rychlá konfigurace Steel Ringu s důrazem na maximální rychlost v protáhlých zatáčkách a perfektní výjezdy na rovinky.",
         length: "1150m",
-        turns: "?",
+        turns: 14,
         map: "trat_4_map_fast.png",
-        features: ["Asfaltový povrch"]
+        features: ["Asfaltový povrch", "Výrazné převýšení"]
       },
       {
         id: "Technical",
-        desc: "The mplete track configuration utilizing every section. Features high-speed straights, technical chicanes, and elevation changes. Ideal for competitive races and championship events.",
+        desc: "Extrémně náročná konfigurace s 18 zatáčkami. Tady nerozhoduje jen výkon, ale čistá stopa a precizní práce s přenosem váhy.",
         length: "1234m",
         turns: 18,
         map: "trat_4_map_technical.png",
-        features: ["Asfaltový povrch"]
+        features: ["Asfaltový povrch", "Výrazné převýšení"]
       },
     ]
   },
+  {
+    id: 4,
+    name: "MOTOKÁRY MODŘICE",
+    city: "MODŘICE",
+    coords: [49.12242369965655, 16.60468734893678],
+    img: 'bg_modrice.webp',
+    coverImg: 'trat_4_cover.webp',
+    description: "Krytá motokárová hala kousek od Brna, která nabízí technickou a dynamickou trať na speciálním povrchu. Je ideálním místem pro pilování ideální stopy v zimních měsících a pořádání firemních vytrvalostních závodů.",
+    karts: [],
+    variants: []
+  },
+  {
+    id: 5,
+    name: "MOTOKÁRY HODONÍN",
+    city: "HODONÍN",
+    coords: [48.88730493233244, 17.143973099045443],
+    img: 'bg_hodonin.webp',
+    coverImg: 'trat_5_cover.webp',
+    description: "Oblíbená jihomoravská outdoorová trať s kvalitním asfaltem, která prověří jezdce svou technickou náročností. Trať nabízí skvělou kombinaci ostrých vracáků a rychlých pasáží, kde rozhoduje každý detail a plynulost.",
+    karts: [],
+    variants: []
+  },
+  {
+    id: 6,
+    name: "MOTOKÁRY OLOMOUC - LAMBORGHINI KART ARÉNA",
+    city: "OLOMOUC",
+    coords: [49.59754787451436, 17.257380074413593],
+    img: 'bg_olomouc.webp',
+    coverImg: 'trat_6_cover.webp',
+    description: "Prémiová indoorová aréna inspirovaná italským závodním duchem. Nabízí moderní zázemí, flotilu rychlých motokár a víceúrovňovou nebo technicky velmi zajímavě řešenou trať s vysokou přilnavostí povrchu.",
+    karts: [],
+    variants: []
+  },
+  {
+    id: 7,
+    name: "CMKARTING",
+    city: "PRAHA - ZLIČÍN",
+    coords: [50.05891858177532, 14.294566370957286],
+    img: 'bg_cmkarting.webp',
+    coverImg: 'trat_7_cover.webp',
+    description: "Jedna z nejmodernějších krytých arén v Praze s flotilou špičkových elektrických motokár Sodi. Nabízí dokonale čisté prostředí bez emisí, skvělou ergonomii trati a digitální časomíru pro nekompromisní honbu za setinami sekundy.",
+    karts: [],
+    variants: []
+  },
+  {
+    id: 8,
+    name: "KART PLANET",
+    city: "PRAHA",
+    coords: [50.09971376153898, 14.513340023906606],
+    img: 'bg_kartplanet.webp',
+    coverImg: 'trat_8_cover.webp',
+    description: "Venkovní motokárový areál v Praze, který klade důraz na čistou rychlost a širokou trať umožňující reálné předjížděcí manévry. Skvělé místo pro komunitní závody a racing na limitu pod širým nebem.",
+    karts: [],
+    variants: []
+  },
+  {
+    id: 9,
+    name: "KARTARÉNA CHEB",
+    city: "CHEB",
+    coords: [50.08637960116507, 12.448938512900463],
+    img: 'bg_cheb.webp',
+    coverImg: 'trat_9_cover.webp',
+    description: "Závodní okruh mezinárodní úrovně, který patří k absolutní špičce v České republice. Svojí délkou, šířkou a profesionálním asfaltem poskytuje ultimátní zážitek jak pro profesionální závodní týmy, tak pro veřejnost v silných rental motokárách.",
+    karts: [],
+    variants: []
+  },
+  {
+    id: 10,
+    name: "E-KARTS ZLÍN",
+    city: "ZLÍN",
+    coords: [49.221134344323175, 17.6426467747727],
+    img: 'bg_ezlin.webp',
+    coverImg: 'trat_10_cover.webp',
+    description: "Moderní e-kartingové centrum ve Zlíně přinášející okamžitý točivý moment elektrických motorů na technickou vnitřní trať. Žádný hluk, žádný zápach, jen čistá reakce na plyn a precizní mechanický grip.",
+    karts: [],
+    variants: []
+  },
+  {
+    id: 11,
+    name: "MOTOKÁRY LIBEREC",
+    city: "LIBEREC",
+    coords: [50.76490649026443, 15.056073437209928],
+    img: 'bg_liberec.webp',
+    coverImg: 'trat_11_cover.webp',
+    description: "Severočeská indoorová trať situovaná v Liberci, která nabízí zajímavý profil s technickými pasážemi a vracečkami. Prověří schopnost jezdce správně přenášet váhu motokáry a držet ideální stopu.",
+    karts: [],
+    variants: []
+  },
+  {
+    id: 12,
+    name: "KARTCENTRUM RADOTÍN",
+    city: "PRAHA - RADOTÍN",
+    coords: [49.98924553952956, 14.375851266385805],
+    img: 'bg_radotin.webp',
+    coverImg: 'trat_12_cover.webp',
+    description: "Legendární a obří motokárová hala v Radotíně, která se pyšní extrémní délkou vnitřního okruhu. Široká trať s asfaltovým povrchem uvnitř haly a silné benzínové motokáry z ní dělají kultovní záležitost pro všechny hardcore fanoušky motorsportu.",
+    karts: [],
+    variants: []
+  },
+  {
+    id: 13,
+    name: "Praga Silmet Arena",
+    city: "PRAHA",
+    coords: [50.11654966219496, 14.606907553536844],
+    img: 'bg_praga.webp',
+    coverImg: 'trat_13_cover.webp',
+    description: "Špičkový pražský komplex spojený se jménem ikonické české značky Praga. Trať nabízí nekompromisní parametry, závodní vibe, prémiové zázemí a motokáry vyladěné pro maximální možný výkon a zážitek z jízdy.",
+    karts: [],
+    variants: []
+  }
 ];

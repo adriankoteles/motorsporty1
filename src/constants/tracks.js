@@ -91,7 +91,7 @@ export const ALL_TRACKS = [
     ]
   },
   {
-    id: 3, // Opraveno z 4 na 3 pro zachování sekvence
+    id: 4, // Opraveno z 4 na 3 pro zachování sekvence
     name: "STEEL RING",
     city: "TŘINEC",
     coords: [49.691454618987045, 18.66848821476503],
@@ -130,7 +130,7 @@ export const ALL_TRACKS = [
     ]
   },
   {
-    id: 4,
+    id: 3,
     name: "MOTOKÁRY MODŘICE",
     city: "MODŘICE",
     coords: [49.12242369965655, 16.60468734893678],
